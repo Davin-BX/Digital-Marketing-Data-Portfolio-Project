@@ -114,7 +114,7 @@ SELECT
     (SELECT c_date FROM ConversionRates WHERE ConversionRate = (SELECT MinConversionRate FROM MaxMinConversionRates)) AS DateWithLowestConversionRate,
     (SELECT MinConversionRate FROM MaxMinConversionRates) AS LowestConversionRate
 
--- Identifying at the Average Revenue on Weekdays and Weekends
+-- Identifying the Average Revenue on Weekdays and Weekends
 
 SELECT WeekdayOrWeekend,
 	CASE
