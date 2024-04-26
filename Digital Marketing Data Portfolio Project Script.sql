@@ -35,7 +35,7 @@ ORDER BY romi DESC
 
 SELECT SUM(CAST(orders AS FLOAT)) AS TotalOrders, 
 SUM(CAST(clicks AS FLOAT)) AS TotalClicks,
-ROUND((SUM(CAST(orders AS FLOAT))/NULLIF(SUM(CAST(mark_spent AS FLOAT)), 0))*100, 2) AS total_Conversion_Rate
+ROUND((SUM(CAST(orders AS FLOAT))/NULLIF(SUM(CAST(clicks AS FLOAT)), 0))*100, 2) AS total_Conversion_Rate
 FROM PortfolioProject..DigitalMarketingCampaign
 ORDER BY total_Conversion_Rate DESC
 
@@ -43,7 +43,7 @@ ORDER BY total_Conversion_Rate DESC
 
 SELECT campaign_name, SUM(CAST(orders AS FLOAT)) AS TotalOrders, 
 SUM(CAST(clicks AS FLOAT)) AS TotalClicks,
-ROUND((SUM(CAST(orders AS FLOAT))/NULLIF(SUM(CAST(mark_spent AS FLOAT)), 0))*100, 2) AS Conversion_Rate
+ROUND((SUM(CAST(orders AS FLOAT))/NULLIF(SUM(CAST(clicks AS FLOAT)), 0))*100, 2) AS Conversion_Rate
 FROM PortfolioProject..DigitalMarketingCampaign
 GROUP BY campaign_name
 ORDER BY Conversion_Rate DESC
